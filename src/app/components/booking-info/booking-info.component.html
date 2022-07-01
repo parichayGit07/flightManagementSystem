@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style> 
+#t1 {
+  -moz-tab-size: 4; /* Firefox */
+  tab-size: 4;
+}
+
+#t2 {
+  -moz-tab-size: 16; /* Firefox */
+  tab-size: 16;
+}
+input {
+    width: 250px;
+    padding: 5px;
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */
+}
+</style>
+</head>
+<body>
+
+<h1>Flight Details</h1>
+
+<pre id="t1">
+{{this.selectedFlight.flightNumber}}		{{this.selectedFlight.airline}}	{{this.selectedFlight.date}}
+</pre>
+
+<pre id="t2">
+{{this.selectedFlight.source}}	{{this.selectedFlight.destination}}	{{this.selectedFlight.time}}
+</pre>
+
+<form [formGroup]="bookingForm" (ngSubmit)="book()"> 
+    <p>
+        <label for="name">name:</label><br>
+        <input type="text" id="name" name="name" formControlName="name"><br>
+    </p>
+
+    <p>
+        <label for="email">email:</label><br>
+        <input type="text" id="email" name="email" formControlName="email"><br>
+    </p>
+
+    <h1>Enter passenger details below :</h1>
+    <p>
+        <label for="fname">First name:</label><br>
+        <input type="text" id="fname" name="fname" formControlName="firstName"><br>
+    </p>
+  
+    <p>
+        <label for="lname">Last name:</label><br>
+        <input type="text" id="lname" name="lname" formControlName="lastName">
+    </p>
+   
+    <p>
+        <label for="age">age:</label><br>
+        <input type="text" id="age" name="age" formControlName="age">
+    </p>
+
+    <input type="radio" id="male" name="gender" value="MALE" formControlName = "gender">
+<label for="male">MALE</label><br>
+<input type="radio" id="female" name="gender" value="FEMALE" formControlName = "gender">
+<label for="female">FEMALE</label><br>
+  
+    <p>
+      <button type="submit" class="btn btn-secondary btn-lg">Submit</button>
+    </p>
+  
+   
+  </form>
+
+</body>
+</html>
+

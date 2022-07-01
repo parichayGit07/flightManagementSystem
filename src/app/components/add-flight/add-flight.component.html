@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style> 
+
+input {
+    width: 250px;
+    padding: 5px;
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */
+}
+.check{
+    text-align:left;
+    float:left;
+}
+[type="checkbox"]
+{
+    vertical-align:middle;
+}
+</style>
+</head>
+<body>
+
+<h1>Enter Flight Details Below</h1>
+
+<form [formGroup]="addFlightForm" (ngSubmit)="display()"> 
+    <p>
+        <label for="airline">Airline:</label><br>
+        <input type="text" id="airline" name="airline" formControlName="airline"><br>
+    </p>
+
+    <p>
+        <label for="flightNumber">Flight Number:</label><br>
+        <input type="text" id="flightNumber" name="flightNumber" formControlName="flightNumber"><br>
+    </p>
+
+    <p>
+        <label for="source">Source:</label><br>
+        <input type="text" id="source" name="source" formControlName="source"><br>
+    </p>
+  
+    <p>
+        <label for="destination">Destination:</label><br>
+        <input type="text" id="destination" name="destination" formControlName="destination"><br>
+    </p>
+
+    <p>
+        <label for="departureTime">Departure Time:</label><br>
+        <input type="text" id="departureTime" name="departureTime" formControlName="departureTime" placeholder="HH:MM"><br>
+    </p>
+
+    <p>
+        <label for="arrivalTime">Arrival Time:</label><br>
+        <input type="text" id="arrivalTime" name="arrivalTime" formControlName="arrivalTime" placeholder="HH:MM"><br>
+    </p>
+
+    <p>
+        <label for="instrumentUsed">Instrument Used:</label><br>
+        <input type="text" id="instrumentUsed" name="instrumentUsed" formControlName="instrumentUsed"><br>
+    </p>
+
+    <p>
+        <label for="economySeats"># of Economy seats:</label><br>
+        <input type="text" id="economySeats" name="economySeats" formControlName="economySeats"><br>
+    </p>
+    
+    <p>
+        <label for="businessSeats"># of Business seats:</label><br>
+        <input type="text" id="businessSeats" name="businessSeats" formControlName="businessSeats"><br>
+    </p>
+
+    <p>
+        <label for="economySeatsPrice">Economy seats price:</label><br>
+        <input type="text" id="economySeatsPrice" name="economySeatsPrice" formControlName="economySeatsPrice"><br>
+    </p>
+    
+    <p>
+        <label for="businessSeatsPrice">Business seats price:</label><br>
+        <input type="text" id="businessSeatsPrice" name="businessSeatsPrice" formControlName="businessSeatsPrice"><br>
+    </p>
+
+    <label for="days">Running Days:</label><br>
+
+    <label for="checkid"  style="word-wrap:break-word">
+        <input id="checkid"  type="checkbox" value="test" formControlName="monday" />Monday
+     </label>
+
+     <label for="checkid"  style="word-wrap:break-word">
+        <input id="checkid"  type="checkbox" value="test" formControlName="tuesday" />Tuesday
+     </label>
+
+     <label for="checkid"  style="word-wrap:break-word">
+        <input id="checkid"  type="checkbox" value="test" formControlName="wednesday" />Wednesday
+     </label>
+
+     <label for="checkid"  style="word-wrap:break-word">
+        <input id="checkid"  type="checkbox" value="test" formControlName="thursday" />Thursday
+     </label>
+
+     <label for="checkid"  style="word-wrap:break-word">
+        <input id="checkid"  type="checkbox" value="test" formControlName="friday" />Friday
+     </label>
+
+     <label for="checkid"  style="word-wrap:break-word">
+        <input id="checkid"  type="checkbox" value="test" formControlName="saturday" />Saturday
+     </label>
+
+     <label for="checkid"  style="word-wrap:break-word">
+        <input id="checkid"  type="checkbox" value="test" formControlName="sunday" />Sunday
+     </label>
+
+     <br/>
+     <label for="days">Meals:</label><br>
+     <input type="radio" id="html" name="meal" formControlName="meal" value="HTML">
+<label for="html">Veg</label><br>
+<input type="radio" id="css" name="meal" formControlName="meal" value="CSS">
+<label for="css">Non-Veg</label><br>
+<input type="radio" id="javascript" name="meal" formControlName="meal" value="JavaScript">
+<label for="javascript">Both</label>
+
+    <p>
+      <button type="submit" class="btn btn-secondary btn-lg">Submit</button>
+    </p>
+  
+   
+  </form>
+
+</body>
+</html>

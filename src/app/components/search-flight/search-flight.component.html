@@ -1,0 +1,50 @@
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRx1w3qjnz5ayNIoU1k7Upo9um8P9X58J-5Xg&usqp=CAU" class = "flight">
+<form [formGroup]="searchForm" (ngSubmit)="display()">
+
+  <p>
+    <label for="source">Source</label>
+    <select id="source" name="source" formControlName="source">
+      <option [ngValue]="c" *ngFor="let c of cities">
+        {{c}}
+      </option>
+    </select>
+  </p>
+
+  <p>
+    <label for="destination">Destination</label>
+    <select id="destination" name="destination" formControlName="destination">
+      <option [ngValue]="c" *ngFor="let c of cities">
+        {{c}}
+      </option>
+    </select>
+  </p>
+ 
+  <p>
+    <label for="date">Date</label>
+    <input type="date" id="date" name="date" formControlName="date">
+  </p>
+
+  <p>
+    <button type="submit">Submit</button>
+  </p>
+
+ 
+</form>
+
+<ol class="list-group list-group-numbered">
+    <li class="list-group-item" *ngFor="let f of flights; index as i">
+      <span> Airline : {{ f.airline }}</span>
+      <br />
+      <span> Departure time : {{ f.departureTime }}</span>
+      <br />
+      <span> Arrival time : {{ f.arrivalTime }}</span>
+      <br/>
+      <span> {{ f.economySeatsPrice | currency:"INR"}}</span>
+      <br/>
+      <span>
+        <button type="button" (click) = "selectedFlight(f)" class="btn btn-secondary btn-lg">Book</button>
+      </span>
+    </li>
+  </ol>
+
+  

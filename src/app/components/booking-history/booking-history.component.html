@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+ <head> 
+  <style>
+.float-right {
+   float:left;
+}
+#t1 {
+  -moz-tab-size: 4; /* Firefox */
+  tab-size: 12;
+}
+
+#t2 {
+  -moz-tab-size: 16; /* Firefox */
+  tab-size: 16;
+}
+</style> <!--from  www  . j a v  a2  s.  co  m-->
+ </head> 
+ <body translate="no"> 
+  <div> 
+    <img src = "https://i.guim.co.uk/img/media/4b97b8cf0a8bd1a0ff2a819eb024c7f669937136/335_0_1378_827/master/1378.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=d0bb449c1ff83b33f93f0db6b04ac5d9" width="400" 
+    height="500" class = "flight"/>
+    <form (ngSubmit)="getBookingHistory()">
+        <input type="email" placeholder="Enter your email" [formControl] = "email">
+        <input type="submit" (onclick) = "getBookingHistory()" value="Submit">
+        </form>
+  </div>
+  <br/>
+  <ol class="list-group list-group-numbered">
+    <li class="list-group-item" *ngFor="let b of bookingInfo; index as i">
+        <pre id="t2">
+            {{b.airline}}	{{b.pnr}}	{{b.time}}
+            </pre>
+            
+            <pre id="t2">
+            {{b.source}}	{{b.destination}}	{{b.departureTime | date}}
+            </pre>
+
+            <pre id="t2">
+            {{getStatus(b)}}
+            </pre>
+    </li>
+  </ol>
+ </body>
+

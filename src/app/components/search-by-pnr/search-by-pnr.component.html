@@ -1,0 +1,52 @@
+<html lang="en">
+ <head> 
+  <style>
+.float-right {
+   float:left;
+}
+#t1 {
+  -moz-tab-size: 4; /* Firefox */
+  tab-size: 12;
+}
+
+#t2 {
+  -moz-tab-size: 16; /* Firefox */
+  tab-size: 16;
+}
+</style> <!--from  www  . j a v  a2  s.  co  m-->
+ </head> 
+ <body translate="no"> 
+  <div>
+    <img src = "https://www.rd.com/wp-content/uploads/2019/07/GettyImages-1249752632-MLedit.jpg?fit=700,1024" class = "flight"/>
+    <br/>
+    <form  (ngSubmit)="getPassengerInfo()">
+        <input type="email" placeholder="Enter PNR" [formControl] = "pnr">
+        <input type="submit" value="Submit">
+        </form>
+  </div>
+  <br/>
+  <pre id="t1">
+    {{this.bookingInfo.airline}}        {{this.bookingInfo.source}}	          {{this.bookingInfo.destination}}
+    </pre>
+    
+    <pre id="t2" *ngIf="this.bookingInfo.departureTime != 0">
+    {{this.bookingInfo.departureTime | date}}	{{this.bookingInfo.time}}     {{this.bookingInfo.status}}
+    </pre>
+  <ol class="list-group list-group-numbered">
+    <li class="list-group-item" *ngFor="let p of passengerInfo; index as i">
+        <pre id="t1">
+            {{p.firstName}} {{p.lastName}}	
+            </pre>
+            
+            <pre id="t2">
+            {{p.gender}}     {{p.age}}	
+            </pre>
+    </li>
+    
+  </ol>
+
+  <button *ngIf="cancelButton" class = "btn btn-secondary btn-lg" (click) = "cancelTicket()">Cancel Ticket</button>
+
+ </body>
+</html>
+
